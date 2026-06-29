@@ -1,4 +1,5 @@
 resource "aws_security_group" "roboshop_sg" {
+    count = length(var.sg_names)
     name = "${local.common_name}_${var.sg_names[count.index]}_sg"
     description = "roboshop project security groups"
 
