@@ -29,7 +29,7 @@ resource "aws_ssm_parameter" "database_subnet_ids" {
 }
 
 resource "aws_ssm_parameter" "nat_gateway_id" {
-    name = "${ocal.common_name}_nat_gateway_id"
+    name = "${local.common_name}_nat_gateway_id"
     type = "String"
     value = aws_nat_gateway.roboshop_nat.id
 }
