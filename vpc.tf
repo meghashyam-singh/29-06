@@ -9,7 +9,7 @@ resource "aws_vpc" "roboshop_vpc" {
 }
 
 resource "aws_internet_gateway" "roboshop_igw" {
-    vpc_id = "aws_vpc.roboshop_vpc.id"
+    vpc_id = aws_vpc.roboshop_vpc.id
     tags = {
         Name = "${local.common_name}_igw"
     }
