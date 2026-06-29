@@ -1,0 +1,17 @@
+resource "aws_security_group" "roboshop_sg" {
+    name = "${local.common_name}_${var.sg_names[count.index]}_sg"
+    description = "roboshop project security groups"
+
+    vpc_id = data.aws_ssm_parameter.vpc_id.value
+
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = [ "0.0.0.0/0" ]
+    }
+
+    tags = {
+        Name = "${local.common_name}_${var.sg_names[count.index]}_sg"
+    }
+}

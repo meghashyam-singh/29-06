@@ -32,3 +32,13 @@ variable "database_subnet_cidr_block" {
     default = [ "10.0.21.0/24", "10.0.22.0/24" ]
     type = list(string)
 }
+
+variable "sg_names" {
+    default = [ "mongodb", "redis", "mysql", "rabbitmq", 
+                "catalogue", "user", "cart", "shipping", "payment",
+                "frontend",
+                "bastion",
+                "backend_alb", "frontend_alb"
+                ]
+    type = list(string)
+}
