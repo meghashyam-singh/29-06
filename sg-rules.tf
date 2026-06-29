@@ -7,7 +7,7 @@ resource "aws_security_group_rule" "catalogue_ingress_rule" {
     source_security_group_id = data.aws_ssm_parameter.backend_alb_sg_id.value
 }
 
-resource "aws_security_group_rule" "catalogue_ingress_rule" {
+resource "aws_security_group_rule" "catalogue_ingress_rule_bastion" {
     type = "ingress"
     from_port = 22
     to_port = 22
