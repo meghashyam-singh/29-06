@@ -1,5 +1,5 @@
 output "vpc_id" {
-    value = aws_vpc.roboshop_vpc.tf
+    value = aws_vpc.roboshop_vpc.id
 }
 
 output "igw_id" {
