@@ -22,7 +22,7 @@ resource "aws_subnet" "public" {
     cidr_block = var.public_subnet_cidr_block[count.index]
     map_public_ip_on_launch = true
     tags = {
-        Name = "${local.common_name}_${var.az[count.index]}"
+        Name = "${local.common_name}_public_${var.az[count.index]}"
     }
 }
 
@@ -32,7 +32,7 @@ resource "aws_subnet" "private" {
     availability_zone = var.az[count.index]
     cidr_block = var.private_subnet_cidr_block[count.index]
     tags = {
-        Name = "${local.common_name}_${var.az[count.index]}"
+        Name = "${local.common_name}_private_${var.az[count.index]}"
     }
 }
 
@@ -42,7 +42,7 @@ resource "aws_subnet" "database" {
     availability_zone = var.az[count.index]
     cidr_block = var.database_subnet_cidr_block[count.index]
     tags = {
-        Name = "${local.common_name}_${var.az[count.index]}"
+        Name = "${local.common_name}_database_${var.az[count.index]}"
     }
 }
 
