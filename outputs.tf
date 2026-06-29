@@ -33,3 +33,7 @@ output "database_route_table_id" {
 output "nat_gateway_id" {
     value = aws_nat_gateway.roboshop_nat.id
 }
+
+output "sg_ids" {
+    value = aws_security_group.roboshop_sg.id
+}
